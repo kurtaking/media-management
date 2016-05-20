@@ -16,7 +16,9 @@ nav {
 
 /** Materialize Overrides
 */
-
+.container {
+    padding-top: 15px;
+}
 
 #vinyl-breadcrumb {
     margin: 2.1rem 0 1.68rem 0
