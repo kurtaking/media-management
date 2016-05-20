@@ -61,7 +61,7 @@
                             <th data-field="artist">Artist</th>
                             <th data-field="title">Title</th>
                             <th data-field="year">Year</th>
-                            <th data-field="delete hide-on-small-only"></th>
+                            <th data-field="year">Genre</th>
                         </tr>
                     </thead>
 
@@ -72,7 +72,7 @@
                                 <td><a href="{% url 'vinyl_detail' vinyl.id %}">{{ vinyl.artist }}</a></td>
                                 <td>{{ vinyl.title }}</td>
                                 <td>{{ vinyl.year }}</td>
-                                <td><a class="tooltipped hide-on-small-only" data-position="right" data-delay="50" data-tooltip="Delete"><i class="material-icons">clear</i></a></td>
+                                <td>{{ vinyl.genre }}</td>
                             </tr>
                         {% endfor %}
 
