@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
-from MMS.models import Vinyl
+from MMS.models import Vinyl, User
 
 
 
@@ -75,4 +75,7 @@ def books(request):
     return render(request, 'MMS/books.html')
 
 def settings(request):
-    return render(request, 'MMS/settings.html')
+    users = User.objects.all()
+    context = {'users': users}
+
+    return render(request, 'MMS/settings.html', context)

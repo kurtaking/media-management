@@ -12,6 +12,10 @@ body {
 
 nav {
     background-color: #355c7d !important;
+    padding-right: 10px;
+}
+#nav-menu-icon {
+    padding-left: 10px;
 }
 
 /** Materialize Overrides
