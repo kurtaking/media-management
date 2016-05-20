@@ -5,7 +5,7 @@ from .models import Vinyl
 class AddVinylForm(forms.ModelForm):
     class Meta:
         model = Vinyl
-        fields = ['artist', 'title', 'year', 'label', 'format_size', 'isbn']
+        fields = ['artist', 'title', 'year', 'genre', 'label', 'format_size', 'isbn']
         widgets = {
             'artist': forms.TextInput(
                 attrs={'id': 'artist', 'class': 'form-control'}
@@ -15,6 +15,9 @@ class AddVinylForm(forms.ModelForm):
             ),
             'year': forms.TextInput(
                 attrs={'id': 'year', 'class': 'form-control'}
+            ),
+            'genre': forms.TextInput(
+                attrs={'id': 'genre', 'class': 'form-control'}
             ),
             'label': forms.TextInput(
                 attrs={'id': 'label', 'class': 'form-control'}
