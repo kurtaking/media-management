@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^movies', views.movies, name='movies'),
     url(r'^video_games', views.video_games, name='video_games'),
     url(r'^books', views.books, name='books'),
+    url(r'^settings', views.settings, name='settings'),
 ]
 
 

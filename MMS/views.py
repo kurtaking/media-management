@@ -73,3 +73,6 @@ def video_games(request):
 
 def books(request):
     return render(request, 'MMS/books.html')
+
+def settings(request):
+    return render(request, 'MMS/settings.html')
