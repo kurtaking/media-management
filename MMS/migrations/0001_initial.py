@@ -31,6 +31,10 @@ class Migration(migrations.Migration):
                 ('artist', models.CharField(max_length=50)),
                 ('title', models.CharField(max_length=50)),
                 ('year', models.CharField(max_length=4)),
+                ('genre', models.CharField(max_length=20)),
+                ('label', models.CharField(max_length=20)),
+                ('format_size', models.IntegerField(default=0)),
+                ('isbn', models.CharField(max_length=25)),
             ],
         ),
     ]

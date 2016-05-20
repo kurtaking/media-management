@@ -10,11 +10,12 @@ urlpatterns = [
     url(r'^vinyls', views.vinyls, name='vinyls'),
 
     url(r'^vinyl/(?P<id>\d+)/', views.vinyl_detail, name='vinyl_detail'),
-    url(r'^addvinyl', views.add_vinyl, name='add_vinyl'),
+    url(r'^by_artist', views.by_artist, name='by_artist'),
 
     url(r'^movies', views.movies, name='movies'),
     url(r'^video_games', views.video_games, name='video_games'),
     url(r'^books', views.books, name='books'),
+    url(r'^settings', views.settings, name='settings'),
 ]
 
 

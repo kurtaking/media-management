@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from django.http import Http404, HttpResponseRedirect
-from MMS.models import Vinyl
+from MMS.models import Vinyl, User
+
+
 
 from .forms import AddVinylForm
 
@@ -15,7 +17,6 @@ def libraries(request):
     return render(request, 'MMS/libraries.html')
 
 def vinyls(request):
-
     vinyls = Vinyl.objects.order_by('artist', 'year', 'title')
 
     if request.method == 'POST':
@@ -32,7 +33,6 @@ def vinyls(request):
     else:
         form = AddVinylForm()
 
-
     return render(request, 'MMS/vinyls.html', {
         'vinyls': vinyls,
         'form': form,
@@ -47,12 +47,23 @@ def vinyl_detail(request, id):
         'vinyl': vinyl,
     })
 
-def add_vinyl(request):
 
-    if request.method == 'POST':
-        print("Make it here2")
+def by_artist(request):
+    vinyls = Vinyl.objects.all()
+    artists = []
+    temp = []
+
+    for vinyl in vinyls:
+        temp.append(vinyl)
+        if vinyl.artist not in temp:
+            artists.append(vinyl)
+
+    for item in artists:
+        print(item.artist)
+
 
     return render(request, 'MMS/vinyls.html')
+
 
 def movies(request):
     return render(request, 'MMS/movies.html')
@@ -62,3 +73,9 @@ def video_games(request):
 
 def books(request):
     return render(request, 'MMS/books.html')
+
+def settings(request):
+    users = User.objects.all()
+    context = {'users': users}
+
+    return render(request, 'MMS/settings.html', context)
