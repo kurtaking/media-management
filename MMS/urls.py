@@ -1,0 +1,22 @@
+from django.conf.urls import url
+
+from . import views
+
+urlpatterns = [
+    url(r'^$', views.index, name='index'),
+    url(r'^home', views.index, name='home'),
+    url(r'^user_dashboard', views.user_dashboard, name='user_dashboard'),
+    url(r'^libraries', views.libraries, name='libraries'),
+    url(r'^vinyls', views.vinyls, name='vinyls'),
+
+    url(r'^vinyl/(?P<id>\d+)/', views.vinyl_detail, name='vinyl_detail'),
+    url(r'^addvinyl', views.add_vinyl, name='add_vinyl'),
+
+    url(r'^movies', views.movies, name='movies'),
+    url(r'^video_games', views.video_games, name='video_games'),
+    url(r'^books', views.books, name='books'),
+]
+
+
+
+
